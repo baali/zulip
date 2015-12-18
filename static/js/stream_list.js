@@ -33,6 +33,8 @@ exports.build_stream_list = function () {
                 return 1;
             } else if (! recent_subjects.has(b) && recent_subjects.has(a)) {
                 return -1;
+            } else if (recent_subjects.has(b) && recent_subjects.has(a)) {
+              return recent_subjects.get(b)[0].timestamp - recent_subjects.get(a)[0].timestamp;
             }
         }
         return util.strcmp(a, b);
